@@ -1,0 +1,43 @@
+# Gradle
+.gradle/
+build/
+*/build/
+out/
+!gradle/wrapper/gradle-wrapper.jar
+
+# IDEs
+.idea/
+*.iml
+*.ipr
+*.iws
+*.classpath
+*.project
+.settings/
+
+# Logs
+*.log
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Spring Boot Specific
+application-local.yml
+application-dev.yml
+
+# Cache & Temp Files
+*.tmp
+*.swp
+
+# Generated Files
+bin/
+gen/
+
+# Ignore IntelliJ caches but keep configurations
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
+.idea/**/shelf
+.idea/caches
+.idea/libraries
+.idea/modules.xml
