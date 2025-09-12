@@ -1,5 +1,4 @@
 rootProject.name = 'MarketPlaceX'
-//include 'common-security', 'auth-service'
 include 'Commons:common-model',
 'Commons:common-security',
 'Commons:common-utils',

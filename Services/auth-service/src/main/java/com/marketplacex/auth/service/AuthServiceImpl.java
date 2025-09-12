@@ -1,0 +1,61 @@
+package com.marketplacex.auth.service;
+
+import com.marketplacex.auth.dto.LoginRequest;
+import com.marketplacex.auth.dto.LoginResponse;
+import com.marketplacex.auth.dto.RegisterRequest;
+import com.marketplacex.auth.entity.User;
+import com.marketplacex.auth.exception.AuthException;
+import com.marketplacex.auth.repository.UserRepository;
+import com.marketplacex.security.jwt.JwtUtil;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+
+@Service
+public class AuthServiceImpl implements AuthService{
+
+    private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
+    private final JwtUtil jwtUtil;
+    private final AuthenticationManager authenticationManager;
+
+    @Autowired
+    public AuthServiceImpl(final UserRepository userRepository, final PasswordEncoder passwordEncoder,
+                           final JwtUtil jwtUtil, final AuthenticationManager authenticationManager) {
+        this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
+        this.jwtUtil = jwtUtil;
+        this.authenticationManager = authenticationManager;
+    }
+
+    @Override
+    public String register(final RegisterRequest request) throws AuthException {
+        if (userRepository.findByUserName(request.getUserName()).isPresent()) {
+            throw new AuthException("User already registered! Please login...");
+        }
+
+        User user = User.builder()
+                .userName(request.getUserName())
+                .email(request.getEmail())
+                .password(passwordEncoder.encode(request.getPassword()))
+                .role(request.getRole())
+                .build();
+
+        userRepository.save(user);
+        return "User registered successfully!";
+    }
+
+    @Override
+    public LoginResponse login(final LoginRequest request) throws AuthException {
+        Authentication auth = authenticationManager.authenticate(
+                new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
+        );
+
+
+        String token = jwtUtil.generateToken(auth.getName(), auth.getAuthorities().iterator().next().getAuthority());
+        return new LoginResponse(token);
+    }
+}
