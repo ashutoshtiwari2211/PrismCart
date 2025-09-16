@@ -4,11 +4,6 @@ plugins {
     id 'java'
 }
 
-allprojects {
-    group = 'com.backend'
-    version = '1.0.0-SNAPSHOT'
-}
-
 subprojects {
     apply plugin: 'java'
     apply plugin: 'io.spring.dependency-management'

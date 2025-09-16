@@ -3,10 +3,10 @@ services:
     image: postgres:16
     container_name: postgres
     environment:
-      POSTGRES_USER: marketplacex
+      POSTGRES_USER: prismcart
       POSTGRES_PASSWORD: password
-      TZ: UTC
-      PGTZ: UTC
+      TZ: Asia/Kolkata
+      PGTZ: Asia/Kolkata
     ports:
       - "5432:5432"
 
