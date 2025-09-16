@@ -1,6 +1,6 @@
-package com.marketplacex.auth.service;
+package com.prismcart.auth.service;
 
-import com.marketplacex.auth.repository.UserRepository;
+import com.prismcart.auth.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;

@@ -1,9 +1,9 @@
-package com.marketplacex.auth;
+package com.prismcart.auth;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
-@SpringBootApplication(scanBasePackages = {"com.marketplacex"})
+@SpringBootApplication(scanBasePackages = {"com.prismcart"})
 public class AuthServiceApplication {
 
     public static void main(String[] args) {

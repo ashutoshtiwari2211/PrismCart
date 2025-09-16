@@ -1,4 +1,4 @@
-package com.marketplacex.auth.dto;
+package com.prismcart.auth.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

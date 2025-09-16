@@ -1,6 +1,6 @@
-package com.marketplacex.auth.dto;
+package com.prismcart.auth.dto;
 
-import com.marketplacex.auth.entity.Role;
+import com.prismcart.auth.entity.Role;
 import lombok.*;
 
 @Getter

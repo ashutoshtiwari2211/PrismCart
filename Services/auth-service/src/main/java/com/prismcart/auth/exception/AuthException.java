@@ -1,4 +1,4 @@
-package com.marketplacex.auth.exception;
+package com.prismcart.auth.exception;
 
 public class AuthException extends Exception {
 

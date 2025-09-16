@@ -1,7 +1,7 @@
-package com.marketplacex.security.config;
+package com.prismcart.security.config;
 
-import com.marketplacex.security.jwt.JwtAuthenticationFilter;
-import com.marketplacex.security.jwt.JwtUtil;
+import com.prismcart.security.jwt.JwtAuthenticationFilter;
+import com.prismcart.security.jwt.JwtUtil;
 import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

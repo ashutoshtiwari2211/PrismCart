@@ -1,5 +1,5 @@
 
-package com.marketplacex.security.jwt;
+package com.prismcart.security.jwt;
 
 import io.jsonwebtoken.*;
 import io.jsonwebtoken.io.Decoders;

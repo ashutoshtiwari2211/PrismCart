@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
 }
 
-group = 'com.marketplacex.utils'
+group = 'com.prismcart.utils'
 version = '0.0.1-SNAPSHOT'
 
 dependencies {

@@ -1,7 +1,7 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/marketplacex
-    username: marketplacex
+    url: jdbc:postgresql://localhost:5432/prismcart
+    username: prismcart
     password: password
     driver-class-name: org.postgresql.Driver
     hikari:

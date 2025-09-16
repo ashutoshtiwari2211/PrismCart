@@ -1,4 +1,4 @@
-rootProject.name = 'MarketPlaceX'
+rootProject.name = 'PrismCart'
 include 'Commons:common-model',
 'Commons:common-security',
 'Commons:common-utils',

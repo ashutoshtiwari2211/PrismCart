@@ -1,10 +1,10 @@
-package com.marketplacex.auth.controller;
+package com.prismcart.auth.controller;
 
-import com.marketplacex.auth.dto.LoginRequest;
-import com.marketplacex.auth.dto.LoginResponse;
-import com.marketplacex.auth.dto.RegisterRequest;
-import com.marketplacex.auth.exception.AuthException;
-import com.marketplacex.auth.service.AuthService;
+import com.prismcart.auth.dto.LoginRequest;
+import com.prismcart.auth.dto.LoginResponse;
+import com.prismcart.auth.dto.RegisterRequest;
+import com.prismcart.auth.exception.AuthException;
+import com.prismcart.auth.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

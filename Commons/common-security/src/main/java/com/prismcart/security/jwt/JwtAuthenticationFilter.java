@@ -1,6 +1,6 @@
-package com.marketplacex.security.jwt;
+package com.prismcart.security.jwt;
 
-import com.marketplacex.security.model.AuthUserDetails;
+import com.prismcart.security.model.AuthUserDetails;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;

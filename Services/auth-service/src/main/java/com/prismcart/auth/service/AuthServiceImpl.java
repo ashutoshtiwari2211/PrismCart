@@ -1,12 +1,12 @@
-package com.marketplacex.auth.service;
+package com.prismcart.auth.service;
 
-import com.marketplacex.auth.dto.LoginRequest;
-import com.marketplacex.auth.dto.LoginResponse;
-import com.marketplacex.auth.dto.RegisterRequest;
-import com.marketplacex.auth.entity.User;
-import com.marketplacex.auth.exception.AuthException;
-import com.marketplacex.auth.repository.UserRepository;
-import com.marketplacex.security.jwt.JwtUtil;
+import com.prismcart.auth.dto.LoginRequest;
+import com.prismcart.auth.dto.LoginResponse;
+import com.prismcart.auth.dto.RegisterRequest;
+import com.prismcart.auth.entity.User;
+import com.prismcart.auth.exception.AuthException;
+import com.prismcart.auth.repository.UserRepository;
+import com.prismcart.security.jwt.JwtUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

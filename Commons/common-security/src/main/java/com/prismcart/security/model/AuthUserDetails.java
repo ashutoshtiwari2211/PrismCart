@@ -1,4 +1,4 @@
-package com.marketplacex.security.model;
+package com.prismcart.security.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

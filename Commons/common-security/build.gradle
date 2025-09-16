@@ -2,7 +2,7 @@ plugins {
     id 'java-library'
 }
 
-group = 'com.marketplacex.security'
+group = 'com.prismcart.security'
 version = '0.0.1-SNAPSHOT'
 
 dependencies {

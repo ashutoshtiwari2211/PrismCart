@@ -1,4 +1,4 @@
-package com.marketplacex.auth.entity;
+package com.prismcart.auth.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
