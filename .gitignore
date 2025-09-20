@@ -28,6 +28,7 @@ application-dev.yml
 # Cache & Temp Files
 *.tmp
 *.swp
+*.env
 
 # Generated Files
 bin/

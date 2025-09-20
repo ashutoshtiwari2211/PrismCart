@@ -1,8 +1,8 @@
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/prismcart
-    username: prismcart
-    password: password
+    url: ${POSTGRES_DB_URL}
+    username: ${POSTGRES_DB_USERNAME}
+    password: ${POSTGRES_DB_PASSWORD}
     driver-class-name: org.postgresql.Driver
     hikari:
       data-source-properties:
@@ -22,7 +22,7 @@ spring:
 
 security:
   jwt:
-    secret: q83wZk6nYw3uT4jvO8sC6l7h9wF5x2a1mB3dR8nQ0xY=   # put a base64-encoded 256-bit key in env var
+    secret: ${JWT_SECRET_KEY}
     expiration-ms: 86400000        # 1 day
 
 
