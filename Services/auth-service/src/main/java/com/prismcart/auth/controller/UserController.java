@@ -1,6 +1,7 @@
 package com.prismcart.auth.controller;
 
 import com.prismcart.auth.dto.UserProfileResponse;
+import com.prismcart.auth.exception.AuthException;
 import com.prismcart.auth.service.UserService;
 import com.prismcart.commons.model.ApiResponse;
 import lombok.AllArgsConstructor;
@@ -18,7 +19,7 @@ public class UserController {
     private final UserService userService;
 
     @GetMapping("/me")
-    public ResponseEntity<ApiResponse<UserProfileResponse>>  getMyProfile(Authentication authentication) {
+    public ResponseEntity<ApiResponse<UserProfileResponse>>  getMyProfile(Authentication authentication) throws AuthException {
         UserProfileResponse user = userService.getMyProfile(authentication);
         return ResponseEntity.ok(ApiResponse.success(user, "User profile fetched successfully"));
     }
