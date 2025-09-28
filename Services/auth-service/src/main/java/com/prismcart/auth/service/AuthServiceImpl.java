@@ -44,8 +44,8 @@ public class AuthServiceImpl implements AuthService{
                 .role(request.getRole())
                 .build();
 
-        userRepository.save(user);
-        return "User registered successfully!";
+        User registeredUser = userRepository.save(user);
+        return registeredUser.getId().toString();
     }
 
     @Override
@@ -53,9 +53,12 @@ public class AuthServiceImpl implements AuthService{
         Authentication auth = authenticationManager.authenticate(
                 new UsernamePasswordAuthenticationToken(request.getUsername(), request.getPassword())
         );
-
-
-        String token = jwtUtil.generateToken(auth.getName(), auth.getAuthorities().iterator().next().getAuthority());
+        String token;
+        try{
+         token = jwtUtil.generateToken(auth.getName(), auth.getAuthorities().iterator().next().getAuthority());
+        }catch (Exception ex){
+            throw new AuthException("Issue in generating token" + ex.getMessage());
+        }
         return new LoginResponse(token);
     }
 }
