@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;DB_CLOSE_DELAY=-1
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    # This property tells Hibernate to use a separate query to fetch the generated ID,
+    # avoiding the "returning id" clause that is incompatible with H2.
+    properties:
+      hibernate.jdbc.id.insert_sql: "select scope_identity()"
+    show-sql: true
+    database-platform: org.hibernate.dialect.H2Dialect
+
+
+security:
+  jwt:
+    secret: NzE0Y2RhZmI4OGZmMzJmYzc3YjA5Y2I1MzI1YmM3MmE2ODVjMmI1MGI2Yjg5YWJlY2JmYjI2Yzg1NjM3Y2ZmYg==
+    expiration-ms: 86400000

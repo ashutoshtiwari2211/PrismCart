@@ -5,6 +5,7 @@ import com.prismcart.auth.dto.LoginResponse;
 import com.prismcart.auth.dto.RegisterRequest;
 import com.prismcart.auth.exception.AuthException;
 import com.prismcart.auth.service.AuthService;
+import com.prismcart.commons.model.ApiResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -17,23 +18,15 @@ public class AuthController {
     private final AuthService authService;
 
     @PostMapping("/register")
-    public ResponseEntity<String> register(@RequestBody RegisterRequest request) {
-        try {
-            authService.register(request);
-            return ResponseEntity.ok("User registered successfully!");
-        } catch(AuthException authException) {
-            return ResponseEntity.badRequest()
-                    .body("Exception occurred while registering" + authException.getMessage());
-        }
+    public ResponseEntity<ApiResponse<String>> register(@RequestBody RegisterRequest request) throws AuthException {
+            String userId = authService.register(request);
+            return ResponseEntity.ok(ApiResponse.success("User {} registered successfully!", userId));
     }
 
     @PostMapping("/login")
-    public LoginResponse login(@RequestBody LoginRequest request) {
-        try {
-            LoginResponse token = authService.login(request);
-            return token;
-        } catch (AuthException authException) {
-            return new LoginResponse("IncorrectPassword");
-        }
+    public ResponseEntity<ApiResponse<LoginResponse>> login(@RequestBody LoginRequest request) throws AuthException {
+        LoginResponse token = authService.login(request);
+        return ResponseEntity.ok(ApiResponse.success(token, "Login successful"));
+
     }
 }

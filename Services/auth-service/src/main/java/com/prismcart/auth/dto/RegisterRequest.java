@@ -2,9 +2,10 @@ package com.prismcart.auth.dto;
 
 import com.prismcart.auth.entity.Role;
 import lombok.*;
-
-@Getter
-@Setter
+/**
+ * DTO for user registration requests.
+ */
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public class RegisterRequest {
